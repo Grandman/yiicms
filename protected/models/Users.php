@@ -7,6 +7,7 @@
  * @property integer $id
  * @property string $login
  * @property string $password
+ * @property string $admin
  */
 class Users extends CActiveRecord
 {
