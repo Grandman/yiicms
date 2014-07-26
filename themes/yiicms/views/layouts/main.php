@@ -64,6 +64,7 @@
         <?php else: ?>
             Добро пожаловать <?php echo Yii::app()->user->username;?>
         <?php endif; ?>
+
     </div>
 
 </div>
