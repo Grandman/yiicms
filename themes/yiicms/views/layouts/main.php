@@ -32,8 +32,8 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
+                    <li<?php if(Yii::app()->controller->id=="site") echo ' class="active"'; ?>><a href="/">Main</a></li>
+                    <li<?php if(Yii::app()->controller->module!= null && Yii::app()->controller->module->id=="admin") echo ' class="active"'; ?>><a href="<?php echo Yii::app()->urlManager->createUrl('admin');?>">admin</a></li>
                     <li><a href="#">Link</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
@@ -61,7 +61,8 @@
         <?php if (Yii::app()->user->isGuest): ?>
             <?php $this->widget('UserLogin',array('visible'=>Yii::app()->user->isGuest)); ?>
         <?php else: ?>
-            Добро пожаловать <?php echo Yii::app()->user->username;?>
+            Добро пожаловать <?php echo Yii::app()->user->username;?><br>
+            <a href="<?php echo Yii::app()->urlManager->createUrl('site/logout');?>">Выйти</a>
         <?php endif; ?>
 
     </div>
