@@ -27,7 +27,7 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'password'); ?>
-		<?php echo $form->passwordField($model,'password',array('size'=>16,'maxlength'=>16)); ?>
+		<?php echo $form->passwordField($model,'password',array('size'=>16,'maxlength'=>16,'value'=>'')); ?>
 		<?php echo $form->error($model,'password'); ?>
 	</div>
 
