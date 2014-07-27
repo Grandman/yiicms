@@ -34,7 +34,9 @@
                 <ul class="nav navbar-nav">
                     <li<?php if(Yii::app()->controller->id=="site") echo ' class="active"'; ?>><a href="/">Main</a></li>
                     <li<?php if(Yii::app()->controller->module!= null && Yii::app()->controller->module->id=="admin") echo ' class="active"'; ?>><a href="<?php echo Yii::app()->urlManager->createUrl('admin');?>">admin</a></li>
-                    <li><a href="#">Link</a></li>
+                    <?php if(Yii::app()->controller->module!= null && Yii::app()->controller->module->id=="admin"): ?>
+                    <li><a href="<?php echo Yii::app()->urlManager->createUrl('admin/users');?>">Users</a></li>
+                    <?php endif;?>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -69,8 +71,7 @@
 
 </div>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js"></script>
 </body>
