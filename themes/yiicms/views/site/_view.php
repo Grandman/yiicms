@@ -1,10 +1,9 @@
 <?php
 /* @var $this UsersController */
-/* @var $data Users */
+/* @var $data Posts */
 ?>
 
 
-        <?php echo CHtml::link(CHtml::encode($data->title), array('view', 'id'=>$data->title)); ?>
-<br>
+       <h2><?php echo CHtml::link(CHtml::encode($data->title), array('posts/view', 'id'=>$data->id)); ?></h2>
         <?php echo CHtml::encode($data->text); ?>
 <br>
